@@ -1,0 +1,163 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Dark background and global text color */
+  body {
+    font-family: Arial, sans-serif;
+    background: #1f1f1f; /* Dark background */
+    color: #f5f5f5;      /* Light text for contrast */
+  }
+  
+  /* Header */
+  header {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    color: #fff;
+  }
+  header img {
+    max-width: 400px; /* Adjust the size as needed */
+    height: auto;     /* Maintains the aspect ratio */
+  }
+  
+  
+  /* Main container */
+  main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  #entries-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Entry Card */
+  .entry-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #2a2a2a;       /* Dark grey card background */
+    width: 95%;                /* Very wide, almost full width */
+    max-width: 1400px;         /* Allows even wider cards on large screens */
+    margin: 20px 0;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4); /* Heavier shadow for dark theme */
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Card Hover */
+  .entry-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  }
+  
+  /* Left content */
+  .left-content {
+    display: flex;
+    flex: 1 1 auto;
+  }
+  
+  .artist-img {
+    width: 40%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 16px;
+  }
+  
+  /* Details */
+  .entry-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .entry-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .heart-img {
+    width: 15%;
+    margin-right: 8px;
+  }
+  
+  .country-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f5f5f5;
+  }
+  
+  .song {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 10px 0 4px;
+    color: #ffffff;
+  }
+  
+  .artist {
+    font-size: 1.2rem;
+    color: #cccccc;
+  }
+  
+  /* Spotify embed */
+  .spotify-player {
+    width: 100%;
+    max-width: 400px;
+    height: 80px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: none;
+  }
+  
+  /* Right-side video */
+  .embed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: 20px;
+  }
+  
+  .youtube-player {
+    width: 100%;
+    max-width: 444px; /* standard 16:9 ratio width */
+    height: 250px;    /* standard 16:9 ratio height */
+    border-radius: 8px;
+    border: none;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .entry-card {
+      flex-direction: column;
+      align-items: center;
+    }
+    .left-content {
+      margin-bottom: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+    .embed-container {
+      width: 100%;
+      margin: 0;
+      margin-top: 20px;
+    }
+    .youtube-player {
+      max-width: 100%;
+      height: auto;
+    }
+    .artist-img{
+        display: none;
+    }
+  }
+  

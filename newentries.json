@@ -1,0 +1,226 @@
+[
+    {
+      "country": "Albania",
+      "heartimg": "svg/hearts/andorra.svg",
+      "artist": "Shkodra Elektronike",
+      "song": "Zjerm",
+      "artistimg": "img/artists/shkodraelekronike.jpg",
+      "spotify": "34ozWcKZQ0RvV9td8EHfXO",
+      "youtube": "RNT1SmmxuIk?si=ggPEpvs8zszs6NiU"
+    },
+    {
+      "country": "Armenia",
+      "heartimg": "svg/hearts/armenia.svg",
+      "artist": "PARG",
+      "song": "SURVIVOR",
+      "artistimg": "img/artists/parg.jpg",
+      "spotify": "34ozWcKZQ0RvV9td8EHfXO",
+      "youtube": "RfH5o3XtI2c?si=xirqykGpuHnoyswW"
+    },
+    {
+      "country": "Australia",
+      "heartimg": "svg/hearts/australia.svg",
+      "artist": "Go-Jo",
+      "song": "Milkshake Man",
+      "artistimg": "img/artists/gojo.jpg",
+      "spotify": "34ozWcKZQ0RvV9td8EHfXO",
+      "youtube": "RfH5o3XtI2c?si=xirqykGpuHnoyswW"
+    },
+    {
+      "country": "Austria",
+      "heartimg": "img/hearts/austria.jpg",
+      "artist": "JJ",
+      "song": "",
+      "artistimg": "img/artists/jj.jpg"
+    },
+    {
+      "country": "Azerbaijan",
+      "heartimg": "img/hearts/azerbaijan.jpg",
+      "artist": "Mamagama",
+      "song": "Run With U",
+      "artistimg": "img/artists/mamagama.jpg"
+    },
+    {
+      "country": "Belgium",
+      "heartimg": "img/hearts/belgium.jpg",
+      "artist": "Red Sebastian",
+      "song": "Strobe Lights",
+      "artistimg": "img/artists/redsebastian.jpg"
+    },
+    {
+      "country": "Croatia",
+      "heartimg": "img/hearts/croatia.jpg",
+      "artist": "Marko Bošnjak",
+      "song": "Poison Cake",
+      "artistimg": "img/artists/markobosnjak.jpg"
+    },
+    {
+      "country": "Cyprus",
+      "heartimg": "img/hearts/cyprus.jpg",
+      "artist": "Theo Evan",
+      "song": "",
+      "artistimg": "img/artists/theoevan.jpg"
+    },
+    {
+      "country": "Czechia",
+      "heartimg": "img/hearts/czechia.jpg",
+      "artist": "ADONXS",
+      "song": "Kiss Kiss Goodbye",
+      "artistimg": "img/artists/adonxs.jpg"
+    },
+    {
+      "country": "Denmark",
+      "heartimg": "img/hearts/denmark.jpg",
+      "artist": "Sissal",
+      "song": "Hallucination",
+      "artistimg": "img/artists/sissal.jpg"
+    },
+    {
+      "country": "Estonia",
+      "heartimg": "img/hearts/estonia.jpg",
+      "artist": "Tommy Cash",
+      "song": "Espresso Macchiato",
+      "artistimg": "img/artists/tommycash.jpg"
+    },
+    {
+      "country": "Finland",
+      "heartimg": "img/hearts/finland.jpg",
+      "artist": "Erika Vikman",
+      "song": "Ich Komme",
+      "artistimg": "img/artists/erikavikman.jpg"
+    },
+    {
+      "country": "France",
+      "heartimg": "img/hearts/france.jpg",
+      "artist": "Louane",
+      "song": "",
+      "artistimg": "img/artists/louane.jpg"
+    },
+    {
+      "country": "Georgia",
+      "heartimg": "img/hearts/georgia.jpg",
+      "artist": "TBA",
+      "song": "",
+      "artistimg": "img/artists/tba.jpg"
+    },
+    {
+      "country": "Germany",
+      "heartimg": "img/hearts/germany.jpg",
+      "artist": "Abor & Tynna",
+      "song": "Baller",
+      "artistimg": "img/artists/abor_tynna.jpg"
+    },
+    {
+      "country": "Greece",
+      "heartimg": "img/hearts/greece.jpg",
+      "artist": "Klavdia",
+      "song": "Asteromáta",
+      "artistimg": "img/artists/klavdia.jpg"
+    },
+    {
+      "country": "Iceland",
+      "heartimg": "img/hearts/iceland.jpg",
+      "artist": "VÆB",
+      "song": "RÓA",
+      "artistimg": "img/artists/vaeb.jpg"
+    },
+    {
+      "country": "Ireland",
+      "heartimg": "img/hearts/ireland.jpg",
+      "artist": "EMMY",
+      "song": "Laika Party",
+      "artistimg": "img/artists/emmy.jpg"
+    },
+    {
+      "country": "Israel",
+      "heartimg": "img/hearts/israel.jpg",
+      "artist": "Yuval Raphael",
+      "song": "New Day Will Rise",
+      "artistimg": "img/artists/yuvalraphael.jpg"
+    },
+    {
+      "country": "Italy",
+      "heartimg": "img/hearts/italy.jpg",
+      "artist": "Lucio Corsi",
+      "song": "Volevo Essere Un Duro",
+      "artistimg": "img/artists/luciocorsi.jpg"
+    },
+    {
+      "country": "Latvia",
+      "heartimg": "img/hearts/latvia.jpg",
+      "artist": "Tautumeitas",
+      "song": "Bur man laimi",
+      "artistimg": "img/artists/tautumeitas.jpg"
+    },
+    {
+      "country": "Lithuania",
+      "heartimg": "img/hearts/lithuania.jpg",
+      "artist": "Katarsis",
+      "song": "Tavo Akys",
+      "artistimg": "img/artists/katarsis.jpg"
+    },
+    {
+      "country": "Luxembourg",
+      "heartimg": "img/hearts/luxembourg.jpg",
+      "artist": "Laura Thorn",
+      "song": "La Poupée Monte Le Son",
+      "artistimg": "img/artists/laurathorn.jpg"
+    },
+    {
+      "country": "Malta",
+      "heartimg": "img/hearts/malta.jpg",
+      "artist": "Miriana Conte",
+      "song": "Kant ('Singing')",
+      "artistimg": "img/artists/mirianaconte.jpg"
+    },
+    {
+      "country": "Montenegro",
+      "heartimg": "img/hearts/montenegro.jpg",
+      "artist": "Nina Žižić",
+      "song": "Dobrodošli",
+      "artistimg": "img/artists/ninazizic.jpg"
+    },
+    {
+      "country": "Netherlands",
+      "heartimg": "img/hearts/netherlands.jpg",
+      "artist": "Claude",
+      "song": "C'est La Vie",
+      "artistimg": "img/artists/claude.jpg"
+    },
+    {
+      "country": "Norway",
+      "heartimg": "img/hearts/norway.jpg",
+      "artist": "Kyle Alessandro",
+      "song": "Lighter",
+      "artistimg": "img/artists/kylealessandro.jpg"
+    },
+    {
+      "country": "Poland",
+      "heartimg": "img/hearts/poland.jpg",
+      "artist": "Justyna Steczkowska",
+      "song": "GAJA",
+      "artistimg": "img/artists/justynasteczkowska.jpg"
+    },
+    {
+      "country": "Portugal",
+      "heartimg": "img/hearts/portugal.jpg",
+      "artist": "TBA",
+      "song": "",
+      "artistimg": "img/artists/tba.jpg"
+    },
+    {
+      "country": "Serbia",
+      "heartimg": "img/hearts/serbia.jpg",
+      "artist": "Princ",
+      "song": "Mila",
+      "artistimg": "img/artists/princ.jpg"
+    },
+    {
+      "country": "Spain",
+      "heartimg": "img/hearts/spain.jpg",
+      "artist": "Melody",
+      "song": "Esa Diva",
+      "artistimg": "img/artists/melody.jpg"
+    }
+  ]
+  
