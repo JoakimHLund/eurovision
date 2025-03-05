@@ -4,11 +4,56 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(entries => {
             const container = document.getElementById("entries-container");
 
+            // Create sticky footer element
+            const stickyFooter = document.createElement("div");
+            stickyFooter.classList.add("sticky-footer");
+            document.body.appendChild(stickyFooter);
+
+            function addToFooter(entry) {
+                const item = document.createElement("div");
+                item.classList.add("footer-item");
+                // Use country as the unique identifier
+                item.setAttribute("data-country", entry.country);
+                item.innerHTML = `<img src="${entry.heartimg}" alt="Heart Flag">`;
+                stickyFooter.appendChild(item);
+            }
+
+            function removeFromFooter(country) {
+                const item = stickyFooter.querySelector(`[data-country='${country}']`);
+                if (item) {
+                    stickyFooter.removeChild(item);
+                }
+            }
+
             entries.forEach(entry => {
+                // Create a wrapper that holds both the star box and the entry card
+                const entryWrapper = document.createElement("div");
+                entryWrapper.classList.add("entry-wrapper");
+
+                // Create the star box element (outside the entry card)
+                const starBox = document.createElement("div");
+                starBox.classList.add("star-box");
+                starBox.innerHTML = `<img src="svg/Empty_Star.svg" alt="Star" class="star-icon">`;
+
+                // Toggle star state on click
+                starBox.addEventListener("click", function () {
+                    const starIcon = starBox.querySelector(".star-icon");
+                    if (starIcon.classList.contains("selected")) {
+                        starIcon.classList.remove("selected");
+                        starIcon.src = "svg/Empty_Star.svg";
+                        removeFromFooter(entry.id);
+                    } else {
+                        starIcon.classList.add("selected");
+                        starIcon.src = "svg/Star_full.svg";
+                        addToFooter(entry);
+                    }
+                });
+
+                // Create the entry card element
                 const card = document.createElement("div");
                 card.classList.add("entry-card");
 
-                // YouTube Embed (only if there's a valid link)
+                // YouTube Embed (if available)
                 let youtubeEmbed = "";
                 if (entry.youtube.trim()) {
                     youtubeEmbed = `
@@ -24,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     `;
                 }
 
-                // Spotify Embed (only if there's a valid link)
+                // Spotify Embed (if available)
                 let spotifyEmbed = "";
                 if (entry.spotify.trim()) {
                     spotifyEmbed = `
@@ -56,7 +101,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 `;
 
-                container.appendChild(card);
+                // Append the star box and the entry card to the wrapper
+                entryWrapper.appendChild(starBox);
+                entryWrapper.appendChild(card);
+
+                // Append the wrapper to the container
+                container.appendChild(entryWrapper);
             });
         })
         .catch(error => console.error("Error loading entries:", error));

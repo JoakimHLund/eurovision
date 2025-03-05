@@ -161,3 +161,47 @@
     }
   }
   
+  /* Wrapper for the star box and entry card */
+.entry-wrapper {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    max-width: 1400px;
+    margin: 20px 0;
+  }
+  
+  /* Star box styling */
+  .star-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;       /* Adjust width as needed */
+    margin-right: 16px;
+    cursor: pointer;
+  }
+  
+  /* Ensure the star icon fits inside the box */
+  .star-box .star-icon {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Sticky footer styling */
+  .sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .sticky-footer .footer-item {
+    margin: 0 8px;
+    width: 30px;
+  }
+  
