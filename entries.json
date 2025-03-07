@@ -1,7 +1,7 @@
 [
     {
       "country": "Albania",
-      "heartimg": "svg/hearts/albania.svg",
+      "heartimg": "svg/hearts/andorra.svg",
       "artist": "Shkodra Elektronike",
       "song": "Zjerm",
       "artistimg": "img/artists/shkodraelekronike.jpg",
@@ -30,9 +30,9 @@
       "country": "Austria",
       "heartimg": "svg/hearts/austria.svg",
       "artist": "JJ",
-      "song": "TBA (06.03)",
+      "song": "Wasted Love",
       "artistimg": "img/artists/jj.jpg",
-      "spotify": "",
+      "spotify": "321yySUTzRXUbzkRTeTzDB",
       "youtube": ""
       
     },

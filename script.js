@@ -9,28 +9,58 @@ document.addEventListener("DOMContentLoaded", function () {
             stickyFooter.classList.add("sticky-footer");
             document.body.appendChild(stickyFooter);
 
+            // Track selected count
+            let selectedCount = 0;
+            const maxSelections = 10;
+
+            // Create an indicator element within the footer
+            const selectionIndicator = document.createElement("div");
+            selectionIndicator.classList.add("selection-indicator");
+            stickyFooter.appendChild(selectionIndicator);
+
+            // Update the text of the indicator
+            function updateIndicator() {
+                selectionIndicator.textContent = `${selectedCount}/${maxSelections} selected`;
+            }
+
+            // Initially show "0/10 selected"
+            updateIndicator();
+
+            // Add item to footer (if limit not exceeded)
             function addToFooter(entry) {
+                if (selectedCount >= maxSelections) {
+                    alert("You can only select up to 10 entries!");
+                    return false;
+                }
+
                 const item = document.createElement("div");
                 item.classList.add("footer-item");
                 // Use country as the unique identifier
                 item.setAttribute("data-country", entry.country);
                 item.innerHTML = `<img src="${entry.heartimg}" alt="Heart Flag">`;
                 stickyFooter.appendChild(item);
+
+                selectedCount++;
+                updateIndicator();
+                return true; // indicates we actually added it
             }
 
+            // Remove item from footer
             function removeFromFooter(country) {
                 const item = stickyFooter.querySelector(`[data-country='${country}']`);
                 if (item) {
                     stickyFooter.removeChild(item);
+                    selectedCount--;
+                    updateIndicator();
                 }
             }
 
+            // Process each entry from JSON
             entries.forEach(entry => {
-                // Create a wrapper that holds both the star box and the entry card
                 const entryWrapper = document.createElement("div");
                 entryWrapper.classList.add("entry-wrapper");
 
-                // Create the star box element (outside the entry card)
+                // Create the star box (favorite icon) outside the card
                 const starBox = document.createElement("div");
                 starBox.classList.add("star-box");
                 starBox.innerHTML = `<img src="svg/Empty_Star.svg" alt="Star" class="star-icon">`;
@@ -39,13 +69,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 starBox.addEventListener("click", function () {
                     const starIcon = starBox.querySelector(".star-icon");
                     if (starIcon.classList.contains("selected")) {
+                        // Unselect
                         starIcon.classList.remove("selected");
                         starIcon.src = "svg/Empty_Star.svg";
-                        removeFromFooter(entry.id);
+                        removeFromFooter(entry.country);
                     } else {
-                        starIcon.classList.add("selected");
-                        starIcon.src = "svg/Star_full.svg";
-                        addToFooter(entry);
+                        // Attempt to add
+                        const added = addToFooter(entry);
+                        if (added) {
+                            starIcon.classList.add("selected");
+                            starIcon.src = "svg/Star_full.svg";
+                        }
                     }
                 });
 
@@ -83,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     `;
                 }
 
+                // Fill card content
                 card.innerHTML = `
                     <div class="left-content">
                         <img class="artist-img" src="${entry.artistimg}" alt="${entry.artist}"/>
@@ -101,11 +136,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 `;
 
-                // Append the star box and the entry card to the wrapper
+                // Add the star box and card to the wrapper, then to the container
                 entryWrapper.appendChild(starBox);
                 entryWrapper.appendChild(card);
-
-                // Append the wrapper to the container
                 container.appendChild(entryWrapper);
             });
         })
