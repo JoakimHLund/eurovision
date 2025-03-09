@@ -1,7 +1,7 @@
 [
     {
       "country": "Albania",
-      "heartimg": "svg/hearts/andorra.svg",
+      "heartimg": "img/hearts/albania.jpg",
       "artist": "Shkodra Elektronike",
       "song": "Zjerm",
       "artistimg": "img/artists/shkodraelekronike.jpg",
@@ -33,7 +33,7 @@
       "song": "Wasted Love",
       "artistimg": "img/artists/jj.jpg",
       "spotify": "321yySUTzRXUbzkRTeTzDB",
-      "youtube": ""
+      "youtube": "-ieSTNpxvio?si=cpt-_gyR22-RAohM"
       
     },
     {
@@ -61,7 +61,7 @@
       "song": "Poison Cake",
       "artistimg": "img/artists/markobosnjak.jpg",
       "spotify": "0jtkkJ6Q0IB5iw5obHJDVl",
-      "youtube": ""
+      "youtube": "xOodVfY8hCs?si=0oDajTaT6wG7XVpX"
     },
     {
       "country": "Cyprus",
@@ -76,10 +76,10 @@
       "country": "Czechia",
       "heartimg": "svg/hearts/czechia.svg",
       "artist": "ADONXS",
-      "song": "Kiss Kiss Goodbye (07.03)",
+      "song": "Kiss Kiss Goodbye",
       "artistimg": "img/artists/adonxs.jpg",
-      "spotify": "",
-      "youtube": ""
+      "spotify": "2ceIi1kJxozE30OURIMkfN",
+      "youtube": "Hm8CIICKAJU?si=qFR4K2cZh87osObP"
     },
     {
       "country": "Denmark",
@@ -255,19 +255,19 @@
     {
       "country": "Portugal",
       "heartimg": "svg/hearts/portugal.svg",
-      "artist": "TBA",
-      "song": "TBA (08.03)",
+      "artist": "NAPA",
+      "song": "Deslocado",
       "artistimg": "img/artists/tba.jpg",
-      "spotify": "",
-      "youtube": ""
+      "spotify": "6QlygEHWgXDeAwDtzksA5b",
+      "youtube": "-s1Cc2uEj3U?si=vWcdQY8-6opFmSHj"
     },
     {
       "country": "San Marino",
       "heartimg": "svg/hearts/sanmarino.svg",
-      "artist": "TBA",
-      "song": "TBA (08.03)",
+      "artist": "Gabry Ponte",
+      "song": "Tutta l'Italia",
       "artistimg": "img/artists/tba.jpg",
-      "spotify": "",
+      "spotify": "0h3w9Sr1gToqxA9gIs5O39",
       "youtube": ""
     },
     {
@@ -300,11 +300,11 @@
     {
       "country": "Sweden",
       "heartimg": "svg/hearts/sweden.svg",
-      "artist": "TBA",
-      "song": "TBA (08.03)",
+      "artist": "KAJ",
+      "song": "Bara Bada Bastu",
       "artistimg": "img/artists/tba.jpg",
-      "spotify": "",
-      "youtube": ""
+      "spotify": "2gThkoApt6B7ajBWZRLAVv",
+      "youtube": "WK3HOMhAeQY?si=H8OgCkf4xIdUCexd"
     },
     {
       "country": "Switzerland",
@@ -327,11 +327,11 @@
     {
       "country": "United Kingdom",
       "heartimg": "svg/hearts/unitedkingdom.svg",
-      "artist": "TBA",
-      "song": "TBA",
+      "artist": "Remember Monday",
+      "song": "What The Hell Just Happened?",
       "artistimg": "img/artists/tba.jpg",
-      "spotify": "",
-      "youtube": ""
+      "spotify": "0z64zsYHTmiTyddbFJ1S6y",
+      "youtube": "-hu6R3ZnOdY?si=blEHe0CEkgNS9I9u"
     }
     
 ]

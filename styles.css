@@ -79,6 +79,8 @@
   .entry-details {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 400px;
   }
   
   .entry-header {
@@ -87,9 +89,12 @@
   }
   
   .heart-img {
-    width: 15%;
+    width: 65px;
+    height: 65px;
+    object-fit: contain; /* ensures the SVG scales without distortion */
     margin-right: 8px;
-  }
+}
+
   
   .country-name {
     font-size: 1.8rem;
@@ -195,6 +200,7 @@
     background: #2a2a2a;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 10px;
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
     z-index: 1000;
@@ -202,6 +208,10 @@
   
   .sticky-footer .footer-item {
     margin: 0 8px;
-    width: 30px;
+    width: 5%;
+
   }
-  
+  .sticky-footer .footer-item img{
+    width: 100%;
+
+  }
