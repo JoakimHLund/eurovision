@@ -257,7 +257,7 @@
       "heartimg": "svg/hearts/portugal.svg",
       "artist": "NAPA",
       "song": "Deslocado",
-      "artistimg": "img/artists/tba.jpg",
+      "artistimg": "img/artists/napa.jpg",
       "spotify": "6QlygEHWgXDeAwDtzksA5b",
       "youtube": "-s1Cc2uEj3U?si=vWcdQY8-6opFmSHj"
     },
@@ -266,7 +266,7 @@
       "heartimg": "svg/hearts/sanmarino.svg",
       "artist": "Gabry Ponte",
       "song": "Tutta l'Italia",
-      "artistimg": "img/artists/tba.jpg",
+      "artistimg": "img/artists/gabryponte.jpg",
       "spotify": "0h3w9Sr1gToqxA9gIs5O39",
       "youtube": ""
     },
@@ -302,16 +302,16 @@
       "heartimg": "svg/hearts/sweden.svg",
       "artist": "KAJ",
       "song": "Bara Bada Bastu",
-      "artistimg": "img/artists/tba.jpg",
+      "artistimg": "img/artists/kaj.jpg",
       "spotify": "2gThkoApt6B7ajBWZRLAVv",
       "youtube": "WK3HOMhAeQY?si=H8OgCkf4xIdUCexd"
     },
     {
       "country": "Switzerland",
       "heartimg": "svg/hearts/switzerland.svg",
-      "artist": "TBA",
+      "artist": "Zoë Më",
       "song": "TBA (10.03)",
-      "artistimg": "img/artists/tba.jpg",
+      "artistimg": "img/artists/zoeme.jpg",
       "spotify": "",
       "youtube": ""
     },
@@ -329,7 +329,7 @@
       "heartimg": "svg/hearts/unitedkingdom.svg",
       "artist": "Remember Monday",
       "song": "What The Hell Just Happened?",
-      "artistimg": "img/artists/tba.jpg",
+      "artistimg": "img/artists/remembermonday.jpg",
       "spotify": "0z64zsYHTmiTyddbFJ1S6y",
       "youtube": "-hu6R3ZnOdY?si=blEHe0CEkgNS9I9u"
     }
