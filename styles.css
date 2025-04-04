@@ -1,217 +1,267 @@
-/* Basic reset */
+/* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Dark background and global text color */
-  body {
-    font-family: Arial, sans-serif;
-    background: #1f1f1f; /* Dark background */
-    color: #f5f5f5;      /* Light text for contrast */
-  }
-  
-  /* Header */
-  header {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  header h1 {
-    font-size: 2rem;
-    color: #fff;
-  }
-  header img {
-    max-width: 400px; /* Adjust the size as needed */
-    height: auto;     /* Maintains the aspect ratio */
-  }
-  
-  
-  /* Main container */
-  main {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  #entries-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Entry Card */
-  .entry-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    background: #2a2a2a;       /* Dark grey card background */
-    width: 95%;                /* Very wide, almost full width */
-    max-width: 1400px;         /* Allows even wider cards on large screens */
-    margin: 20px 0;
-    padding: 24px;
-    border-radius: 16px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4); /* Heavier shadow for dark theme */
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  /* Card Hover */
-  .entry-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.6);
-  }
-  
-  /* Left content */
-  .left-content {
-    display: flex;
-    flex: 1 1 auto;
-  }
-  
-  .artist-img {
-    width: 40%;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 16px;
-  }
-  
-  /* Details */
-  .entry-details {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .entry-header {
-    display: flex;
-    align-items: center;
-  }
-  
-  .heart-img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain; /* ensures the SVG scales without distortion */
-    margin-right: 8px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  
-  .country-name {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #f5f5f5;
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #1f1f1f;
+  color: #f5f5f5;
+}
+
+/* Header */
+header {
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+header img {
+  max-width: 400px;
+  height: auto;
+}
+
+/* Main Layout */
+main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#entries-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Entry Wrapper (star + card) */
+.entry-wrapper {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  max-width: 1400px;
+  margin: 20px 0;
+}
+
+/* Star box */
+.star-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+.star-box .star-icon {
+  width: 100%;
+  height: auto;
+}
+
+/* Entry Card */
+.entry-card {
+  background: #2a2a2a;
+  width: 100%;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.entry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.card-main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center vertically */
+  width: 100%;
+  gap: 20px;
+}
+
+
+/* Left Side: Image & Details */
+.left-content {
+  display: flex;
+  flex: 1 1 auto;
+}
+.artist-img {
+  width: 40%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 16px;
+}
+.entry-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+.entry-header {
+  display: flex;
+  align-items: center;
+}
+.heart-img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+.country-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.song {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 10px 0 4px;
+}
+.artist {
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+/* Right Side: Spotify */
+.embed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+.spotify-player {
+  width: 100%;
+  max-width: 444px;
+  height: 152px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Chevron Toggle */
+.chevron-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #f5f5f5;
+  padding: 0 8px;
+  flex-shrink: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Description & YouTube */
+.entry-description {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #3a3a3a;
+  color: #f5f5f5;
+  border-top: 1px solid #666;
+  border-radius: 0 0 8px 8px;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.youtube-player {
+  width: 100%;
+  max-width: 444px;
+  height: 250px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 12px;
+}
+
+/* Sticky Footer */
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.sticky-footer .footer-item {
+  margin: 0 8px;
+  width: 5%;
+}
+.sticky-footer .footer-item img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .card-main-content {
+    flex-wrap: wrap;
+    gap: 16px;
   }
-  
-  .song {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin: 10px 0 4px;
-    color: #ffffff;
+
+  .left-content {
+    flex: 1 1 100%;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .artist {
-    font-size: 1.2rem;
-    color: #cccccc;
+
+
+  .entry-details {
+    align-items: center;
+    text-align: center;
   }
-  
-  /* Spotify embed */
+
+  .artist-img {
+    display: none;
+  }
+
+  .embed-container {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
   .spotify-player {
     width: 100%;
-    max-width: 400px;
-    height: 80px;
-    border-radius: 8px;
-    margin-top: 10px;
-    border: none;
-  }
-  
-  /* Right-side video */
-  .embed-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin-left: 20px;
-  }
-  
-  .youtube-player {
-    width: 100%;
-    max-width: 444px; /* standard 16:9 ratio width */
-    height: 250px;    /* standard 16:9 ratio height */
-    border-radius: 8px;
-    border: none;
-  }
-  
-  /* Responsive adjustments for smaller screens */
-  @media (max-width: 768px) {
-    .entry-card {
-      flex-direction: column;
-      align-items: center;
-    }
-    .left-content {
-      margin-bottom: 20px;
-      width: 100%;
-      justify-content: center;
-    }
-    .embed-container {
-      width: 100%;
-      margin: 0;
-      margin-top: 20px;
-    }
-    .youtube-player {
-      max-width: 100%;
-      height: auto;
-    }
-    .artist-img{
-        display: none;
-    }
-  }
-  
-  /* Wrapper for the star box and entry card */
-.entry-wrapper {
-    display: flex;
-    align-items: center;
-    width: 95%;
-    max-width: 1400px;
-    margin: 20px 0;
-  }
-  
-  /* Star box styling */
-  .star-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;       /* Adjust width as needed */
-    margin-right: 16px;
-    cursor: pointer;
-  }
-  
-  /* Ensure the star icon fits inside the box */
-  .star-box .star-icon {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-width: 100%;
     height: auto;
   }
-  
-  /* Sticky footer styling */
-  .sticky-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #2a2a2a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-  
-  .sticky-footer .footer-item {
-    margin: 0 8px;
-    width: 5%;
 
+  .chevron-toggle {
+    align-self: flex-start;
+    margin-left: auto;
+    padding-right: 0;
+    margin-top: 0;
   }
-  .sticky-footer .footer-item img{
-    width: 100%;
+}
 
-  }
+.expanded-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.expanded-content .entry-description {
+  flex: 1 1 60%;
+  margin: auto
+}
+
+.expanded-content .embed-container {
+  flex: 1 1 40%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

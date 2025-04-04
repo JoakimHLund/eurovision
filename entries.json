@@ -1,12 +1,13 @@
 [
     {
       "country": "Albania",
-      "heartimg": "img/hearts/albania.jpg",
+      "heartimg": "svg/hearts/andorra.svg",
       "artist": "Shkodra Elektronike",
       "song": "Zjerm",
       "artistimg": "img/artists/shkodraelekronike.jpg",
       "spotify": "34ozWcKZQ0RvV9td8EHfXO",
-      "youtube": "RNT1SmmxuIk?si=ggPEpvs8zszs6NiU"
+      "youtube": "RNT1SmmxuIk?si=ggPEpvs8zszs6NiU",
+      "description": "<p><b>Shkodra Elektronike</b> was formed by two Albanian musicians who emigrated to Italy after leaving their native city of Shkodër.</p><p>The song <b>Zjerm</b> is about fire.</p>"
     },
     {
       "country": "Armenia",
