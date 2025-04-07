@@ -288,3 +288,9 @@ main {
   cursor: pointer;
   opacity: 1;
 }
+
+.slot-dropzone {
+  display: flex;
+  flex: 1;
+}
+

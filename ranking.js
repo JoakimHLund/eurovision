@@ -15,64 +15,80 @@ document.addEventListener("DOMContentLoaded", async function () {
     const cardsContainer = document.getElementById("cards-container");
     const slotsContainer = document.getElementById("slots-container");
 
-    // Create ranking slots
-    const rankLabels = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"];
-    rankLabels.forEach(label => {
-        const slot = document.createElement("div");
-        slot.classList.add("rank-slot");
-        slot.setAttribute("data-rank", label);
-
+    const rankLabels = [
+        { label: "1st", emoji: "🥇", multiplier: 12 },
+        { label: "2nd", emoji: "🥈", multiplier: 10 },
+        { label: "3rd", emoji: "🥉", multiplier: 8 },
+        { label: "4th", emoji: "", multiplier: 7 },
+        { label: "5th", emoji: "", multiplier: 6 },
+        { label: "6th", emoji: "", multiplier: 5 },
+        { label: "7th", emoji: "", multiplier: 4 },
+        { label: "8th", emoji: "", multiplier: 3 },
+        { label: "9th", emoji: "", multiplier: 2 },
+        { label: "10th", emoji: "", multiplier: 1 }
+    ];
+    
+    rankLabels.forEach(({ label, emoji, multiplier }) => {
+        const slotWrapper = document.createElement("div");
+        slotWrapper.classList.add("rank-slot");
+    
         const labelEl = document.createElement("div");
         labelEl.classList.add("rank-label");
-        labelEl.textContent = label;
+        labelEl.textContent = `${emoji} ${label} (${multiplier}x multiplier)`;
+    
+        const dropZone = document.createElement("div");
+        dropZone.classList.add("slot-dropzone");
+    
+        slotWrapper.appendChild(labelEl);
+        slotWrapper.appendChild(dropZone);
+        slotsContainer.appendChild(slotWrapper);
+    });
+    
 
-        slot.appendChild(labelEl);
-        slotsContainer.appendChild(slot);
-
-        // Make slots droppable
-        slot.addEventListener("dragover", e => {
-            e.preventDefault();
-            slot.classList.add("dragover");
-        });
-
-        slot.addEventListener("dragleave", () => {
-            slot.classList.remove("dragover");
-        });
-
-        slot.addEventListener("drop", e => {
-            e.preventDefault();
-            slot.classList.remove("dragover");
-            const draggedId = e.dataTransfer.getData("text/plain");
-            const draggedCard = document.getElementById(draggedId);
-        
-            const existingCard = slot.querySelector(".entry-card");
-        
-            // If there's already a card in the slot, swap positions
-            if (existingCard && draggedCard !== existingCard) {
-                const fromSlot = draggedCard.parentElement;
-                slot.replaceChild(draggedCard, existingCard);
-                fromSlot.appendChild(existingCard);
-            } else if (!existingCard) {
-                // Just move it if slot is empty
-                if (draggedCard.parentElement) {
-                    draggedCard.parentElement.removeChild(draggedCard);
-                }
-                slot.appendChild(draggedCard);
-            }
-        });
-        
+    // Create cards
+    selectedEntries.forEach(entry => {
+        const card = createCard(entry);
+        cardsContainer.appendChild(card);
     });
 
-    // Render entry cards
-    selectedEntries.forEach(entry => {
+    // Left column (source)
+    Sortable.create(cardsContainer, {
+        group: {
+            name: "ranking",
+            pull: true,
+            put: false
+        },
+        animation: 150,
+        sort: true
+    });
+
+    // Right column (ranking dropzones) with swap logic
+    document.querySelectorAll(".slot-dropzone").forEach(zone => {
+        Sortable.create(zone, {
+            group: {
+                name: "ranking",
+                pull: true,
+                put: true
+            },
+            animation: 150,
+            sort: false,
+            onAdd: function (evt) {
+                const newCard = evt.item;
+                const oldCard = Array.from(zone.children).find(child => child !== newCard);
+
+                if (oldCard) {
+                    const fromZone = evt.from;
+                    zone.replaceChild(newCard, oldCard);
+                    fromZone.appendChild(oldCard);
+                }
+            }
+        });
+    });
+
+    function createCard(entry) {
         const card = document.createElement("div");
         card.classList.add("entry-card");
-        card.setAttribute("draggable", "true");
         card.id = `entry-${entry.country.replace(/\s+/g, "-")}`;
-
-        card.addEventListener("dragstart", e => {
-            e.dataTransfer.setData("text/plain", card.id);
-        });
 
         const flag = document.createElement("img");
         flag.src = entry.heartimg;
@@ -87,6 +103,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         card.appendChild(flag);
         card.appendChild(info);
-        cardsContainer.appendChild(card);
-    });
+        return card;
+    }
 });
