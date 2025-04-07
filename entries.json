@@ -7,7 +7,7 @@
       "artistimg": "img/artists/shkodraelekronike.jpg",
       "spotify": "34ozWcKZQ0RvV9td8EHfXO",
       "youtube": "RNT1SmmxuIk?si=ggPEpvs8zszs6NiU",
-      "description": "<p><b>Shkodra Elektronike</b> was formed by two Albanian musicians who emigrated to Italy after leaving their native city of Shkodër.</p><p>The song <b>Zjerm</b> is about fire.</p>"
+      "description": "<p><b>Shkodra Elektronike</b> was formed by two Albanian musicians who emigrated to Italy after leaving their native city of Shkodër.</p><p>The song <b>Zjerm</b> is the albanian word for Fire.</p>"
     },
     {
       "country": "Armenia",
@@ -16,7 +16,9 @@
       "song": "SURVIVOR",
       "artistimg": "img/artists/parg.jpg",
       "spotify": "",
-      "youtube": "RfH5o3XtI2c?si=xirqykGpuHnoyswW"
+      "youtube": "RfH5o3XtI2c?si=xirqykGpuHnoyswW",
+      "description": "<p><b>Parg</b> is an artist known for blending traditional Armenian elements with modern soundscapes.</p><p>The artist's music is deeply rooted in Armenian culture, yet forward-thinking and innovative, positioning him as a trailblazer in modern Armenian pop music.</p>"
+
     },
     {
       "country": "Australia",
@@ -25,7 +27,9 @@
       "song": "Milkshake Man",
       "artistimg": "img/artists/gojo.jpg",
       "spotify": "0TWdO0ephIotzHvGuv2pGC",
-      "youtube": "_08I6mjHSLA?si=98euPuRSLV5PesxY"
+      "youtube": "_08I6mjHSLA?si=98euPuRSLV5PesxY",
+      "description": "<p><b>Go-Jo</b> is the magnetic musician, who can play guitar and unicycle at the same time, is now based in Sydney after being raised off-grid in rural Western Australia.</p><p><b>Milkshake man</b> is according to the artist \"a deep and complex song about confidence and finding the loudest and proudest version of yourself... and also about c*m\"</p>"
+
     },
     {
       "country": "Austria",
@@ -34,7 +38,9 @@
       "song": "Wasted Love",
       "artistimg": "img/artists/jj.jpg",
       "spotify": "321yySUTzRXUbzkRTeTzDB",
-      "youtube": "-ieSTNpxvio?si=cpt-_gyR22-RAohM"
+      "youtube": "-ieSTNpxvio?si=cpt-_gyR22-RAohM",
+      "description": "<p>A countertenor with a distinctive voice that can reach soprano heights, <b>JJ</b> has already made a name for himself in the classical music world.</p><p><b>Wasted Love</b> explores the torment of an unrequited love: the protagonist, overwhelmed by an \"ocean of love\", watches the person he loves move away for fear of being overwhelmed by it."
+
       
     },
     {
@@ -44,7 +50,8 @@
       "song": "Run With U",
       "artistimg": "img/artists/mamagama.jpg",
       "spotify": "4NdNOrfHfNIprOJ3Uq1l43",
-      "youtube": "upbiPJ9uA70?si=KFkMsA6t8Vcx7ea9"
+      "youtube": "upbiPJ9uA70?si=KFkMsA6t8Vcx7ea9",
+      "description": "<p>Formed in 2021, the trio <b>Mamagama</b> has by now cemented itself as one of the most innovative bands in Azerbaijan’s music scene.</p>"
     },
     {
       "country": "Belgium",
@@ -53,7 +60,8 @@
       "song": "Strobe Lights",
       "artistimg": "img/artists/redsebastian.jpg",
       "spotify": "0Tx2AeVKiYQjk8u9p4j6kV",
-      "youtube": "oVrsnGFmuss?si=SJh9CtTQjrzKCJWk"
+      "youtube": "oVrsnGFmuss?si=SJh9CtTQjrzKCJWk",
+      "description": "<p>At the Conservatory, Seppe developed his alter ego: <b>Red Sebastian</b>. The rouge-tinted pop star was a finalist in the 2024 TV talent show Sing Again, during which he stood out for both his fantastic vocal range and a remarkable array of outfits.</p> <p>Red Sebastian is also an accomplished piano player, having been inspired by Lady Gaga at an early age.</p>"
     },
     {
       "country": "Croatia",
@@ -62,16 +70,18 @@
       "song": "Poison Cake",
       "artistimg": "img/artists/markobosnjak.jpg",
       "spotify": "0jtkkJ6Q0IB5iw5obHJDVl",
-      "youtube": "xOodVfY8hCs?si=0oDajTaT6wG7XVpX"
+      "youtube": "xOodVfY8hCs?si=0oDajTaT6wG7XVpX",
+      "description": "<p>The singer <b>Marko Bošnjak</b> is regarded as one of the leaders of a new generation of musicians who are making their mark and setting trends on the Croatian music scene.</p>"
     },
     {
       "country": "Cyprus",
       "heartimg": "svg/hearts/cyprus.svg",
       "artist": "Theo Evan",
-      "song": "TBA (11.03)",
+      "song": "Shh",
       "artistimg": "img/artists/theoevan.jpg",
-      "spotify": "",
-      "youtube": ""
+      "spotify": "3mwqwFYIrO8hE3YBN8gk14",
+      "youtube": "rbfQqWyqgJw?si=OdEB2Cg32jsAq1_e",
+      "description": "<p>A singer and dancer since the age of 7, and a songwriter since his teens, <b>Theo Evan</b>’s Eurovision Song Contest journey is the latest chapter in this artist’s story.</p> <p>Eagle-eyed viewers might have spotted Theo in HBO’s hit TV series Euphoria, where he’s appeared as an extra!</p>"
     },
     {
       "country": "Czechia",
@@ -80,7 +90,8 @@
       "song": "Kiss Kiss Goodbye",
       "artistimg": "img/artists/adonxs.jpg",
       "spotify": "2ceIi1kJxozE30OURIMkfN",
-      "youtube": "Hm8CIICKAJU?si=qFR4K2cZh87osObP"
+      "youtube": "Hm8CIICKAJU?si=qFR4K2cZh87osObP",
+      "description":"<p>As well as a successful career in music, <b>ADONXS</b> has also worked as a professional dancer and model.</p>"
     },
     {
       "country": "Denmark",
@@ -89,7 +100,8 @@
       "song": "Hallucination",
       "artistimg": "img/artists/sissal.jpg",
       "spotify": "07JJ7J8JhEztiEcczioBws",
-      "youtube": "gdCAgiSIOUc?si=DwD05NEcLYydxOKu"
+      "youtube": "gdCAgiSIOUc?si=DwD05NEcLYydxOKu",
+      "description":"<p><b>Sissal</b> lives in Copenhagen but is originally from Tórshavn in the Faroe Islands, where she performed for the first time on stage at the age of 10.</p>"
     },
     {
       "country": "Estonia",
@@ -98,7 +110,7 @@
       "song": "Espresso Macchiato",
       "artistimg": "img/artists/tommycash.jpg",
       "spotify": "3gWBWLw3J3XTy3QTo36GqJ",
-      "youtube": ""
+      "youtube": "5MS_Fczs_98?si=QEsiuLdx8yb29Zhh"
     },
     {
       "country": "Finland",

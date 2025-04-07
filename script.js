@@ -11,13 +11,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let selectedCount = 0;
             const maxSelections = 10;
+            const selectedCountries = new Set();
 
             const selectionIndicator = document.createElement("div");
             selectionIndicator.classList.add("selection-indicator");
             stickyFooter.appendChild(selectionIndicator);
 
+            const continueButton = document.createElement("button");
+            continueButton.textContent = "Continue";
+            continueButton.disabled = true;
+            continueButton.classList.add("continue-button");
+            stickyFooter.appendChild(continueButton);
+
             function updateIndicator() {
                 selectionIndicator.textContent = `${selectedCount}/${maxSelections} selected`;
+                continueButton.disabled = selectedCount !== maxSelections;
             }
 
             updateIndicator();
@@ -35,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 stickyFooter.appendChild(item);
 
                 selectedCount++;
+                selectedCountries.add(entry.country);
                 updateIndicator();
                 return true;
             }
@@ -44,9 +53,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (item) {
                     stickyFooter.removeChild(item);
                     selectedCount--;
+                    selectedCountries.delete(country);
                     updateIndicator();
                 }
             }
+
+            continueButton.addEventListener("click", () => {
+                if (selectedCountries.size === maxSelections) {
+                    const params = Array.from(selectedCountries)
+                        .map(country => encodeURIComponent(country))
+                        .join(",");
+                    window.location.href = `ranking.html?entries=${params}`;
+                }
+            });
 
             entries.forEach(entry => {
                 const entryWrapper = document.createElement("div");
@@ -76,11 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const card = document.createElement("div");
                 card.classList.add("entry-card");
 
-                // Main card content wrapper
                 const cardMain = document.createElement("div");
                 cardMain.classList.add("card-main-content");
 
-                // Left side
+                // Left content
                 const leftContent = document.createElement("div");
                 leftContent.classList.add("left-content");
                 leftContent.innerHTML = `
@@ -95,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 `;
 
-                // Right side - Spotify embed
+                // Spotify embed
                 const embedContainer = document.createElement("div");
                 embedContainer.classList.add("embed-container");
 
@@ -107,52 +125,48 @@ document.addEventListener("DOMContentLoaded", function () {
                 spotifyEmbed.loading = "lazy";
 
                 embedContainer.appendChild(spotifyEmbed);
-
-                // Add left and right to main content
                 cardMain.appendChild(leftContent);
                 cardMain.appendChild(embedContainer);
 
-                // Optional chevron, description and YouTube
-                let descriptionDiv;
+                // Description / YouTube toggle
                 if ((entry.description && entry.description.trim()) || (entry.youtube && entry.youtube.trim())) {
                     const chevronBtn = document.createElement("button");
                     chevronBtn.classList.add("chevron-toggle");
                     chevronBtn.innerHTML = "▼";
-                
+
                     const descriptionDiv = document.createElement("div");
                     descriptionDiv.classList.add("entry-description");
+                    descriptionDiv.style.display = "none";
+
                     if (entry.description && entry.description.trim()) {
-                        const paragraphs = entry.description.split(/\r?\n\r?\n/); // or /\n+/ if using single line breaks
+                        const paragraphs = entry.description.split(/\r?\n\r?\n/);
                         descriptionDiv.innerHTML = paragraphs
                             .map(p => `<p>${p.trim()}</p>`)
                             .join("");
                     }
-                    
-                    descriptionDiv.style.display = "none";
-                
+
                     const youtubeContainer = document.createElement("div");
                     youtubeContainer.classList.add("embed-container");
                     youtubeContainer.style.marginTop = "12px";
-                
+
                     const expandedContent = document.createElement("div");
                     expandedContent.classList.add("expanded-content");
                     expandedContent.style.display = "none";
-                
-                    // Only append if they exist
+
                     if (entry.description && entry.description.trim()) {
                         expandedContent.appendChild(descriptionDiv);
                     }
                     if (entry.youtube && entry.youtube.trim()) {
                         expandedContent.appendChild(youtubeContainer);
                     }
-                
+
                     let isVisible = false;
-                
+
                     chevronBtn.addEventListener("click", () => {
                         isVisible = !isVisible;
                         expandedContent.style.display = isVisible ? "flex" : "none";
                         chevronBtn.innerHTML = isVisible ? "▲" : "▼";
-                        
+
                         if (descriptionDiv) {
                             descriptionDiv.style.display = isVisible ? "block" : "none";
                         }
@@ -171,14 +185,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             youtubeContainer.innerHTML = "";
                         }
                     });
-                
+
                     cardMain.appendChild(chevronBtn);
                     card.appendChild(cardMain);
                     card.appendChild(expandedContent);
                 } else {
                     card.appendChild(cardMain);
                 }
-                
 
                 entryWrapper.appendChild(starBox);
                 entryWrapper.appendChild(card);
