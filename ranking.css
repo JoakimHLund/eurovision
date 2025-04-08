@@ -138,4 +138,104 @@
     }
   }
   
+  /* Submit Button - Dark Theme */
+#submit-btn {
+    margin: 24px auto;
+    display: block;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f5f5f5;
+    background-color: #0077cc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+  }
+  
+  #submit-btn:hover {
+    background-color: #005fa3;
+  }
+  
+  #submit-btn:disabled {
+    background-color: #555;
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  /* Modal Background */
+  #modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Modal Box */
+  #modal > div {
+    background: #2a2a2a;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 90%;
+    color: #f5f5f5;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Modal Input Fields */
+  #modal input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 1px solid #888;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    outline: none;
+  }
+  
+  #modal input:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 4px #00aaff;
+  }
+  
+  #modal label {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #f5f5f5;
+  }
+  
+  
+  /* Modal Submit Button - Dark Theme */
+  #confirm-submit {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #confirm-submit:hover {
+    background-color: #218838;
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
   

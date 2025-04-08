@@ -20,5 +20,50 @@
   </main>
 
   <script src="ranking.js"></script>
+
+
+  <!-- Submit Button -->
+<button id="submit-btn" style="display:none;">Submit Rankings</button>
+
+<!-- Modal -->
+<div id="modal">
+    <div>
+      <form id="modal-form">
+        <div style="text-align: left; margin-bottom: 16px;">
+          <label for="user-name">Name:</label><br />
+          <input id="user-name" name="user-name" type="text" required />
+        </div>
+        <div style="text-align: left; margin-bottom: 24px;">
+          <label for="user-team">Team:</label><br />
+          <input id="user-team" name="user-team" type="text" required />
+        </div>
+        <button type="submit" id="confirm-submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+  apiKey: "AIzaSyC9XUaWmUil7_IKOeS_7_s3XMP8zhLT_bM",
+  authDomain: "eurovision-1aab3.firebaseapp.com",
+  projectId: "eurovision-1aab3",
+  storageBucket: "eurovision-1aab3.firebasestorage.app",
+  messagingSenderId: "1027692031608",
+  appId: "1:1027692031608:web:04ac81204c85cccd39c78d"
+};
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  window.firebaseDB = db;
+  window.firebaseAddDoc = addDoc;
+  window.firebaseCollection = collection;
+</script>
+
 </body>
 </html>
