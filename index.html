@@ -2,20 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Eurovision 2025</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eurovision Game 2025</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <header>
-        <img src="img/esclogo.png" alt="Eurovision 2025 Logo">
-      </header>
-      
+  <header>
+    <img src="img/esclogo.png" alt="Eurovision 2025 Logo">
+  </header>
 
   <main>
-    <div id="entries-container"></div>
-  </main>
+    <section class="welcome">
+      <h1>Welcome to the Eurovision Game 2025! 🎤🌍</h1>
+      <p>
+        The <strong>69th Eurovision Song Contest</strong> will take place in 
+        <strong>Basel, Switzerland</strong> between <strong>13th and 17th of May</strong>, 
+        with the <strong>Grand Final on 17th of May 2025</strong>! 🇨🇭✨
+      </p>
+      <p>Join the fun and test your prediction skills! Here's how it works:</p>
+    </section>
 
-  <script src="script.js"></script>
+    <section class="rules">
+      <h2>📋 Game Rules</h2>
+      <ul>
+        <li>🎧 Each player selects their top 10 favorite entries before the Grand Final.</li>
+        <li>🔢 You'll then rank them from 1st to 10th place.</li>
+        <li>🏆 After the Grand Final, your score is calculated based on how your picks performed in the real contest!</li>
+      </ul>
+
+      <h3>📈 Scoring System:</h3>
+      <p>Your ranked picks are multiplied by the following values based on position:</p>
+      <table>
+        <tr><th>Rank</th><th>Multiplier</th></tr>
+        <tr><td>1st 🥇</td><td>x12</td></tr>
+        <tr><td>2nd 🥈</td><td>x10</td></tr>
+        <tr><td>3rd 🥉</td><td>x8</td></tr>
+        <tr><td>4th</td><td>x7</td></tr>
+        <tr><td>5th</td><td>x6</td></tr>
+        <tr><td>6th</td><td>x5</td></tr>
+        <tr><td>7th</td><td>x4</td></tr>
+        <tr><td>8th</td><td>x3</td></tr>
+        <tr><td>9th</td><td>x2</td></tr>
+        <tr><td>10th</td><td>x1</td></tr>
+      </table>
+
+      <p>✨ The better your top picks perform in the real show, the more points you'll earn!</p>
+
+      <div class="button-container">
+        <a href="entries.html" class="start-button">🎮 Get started!</a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
