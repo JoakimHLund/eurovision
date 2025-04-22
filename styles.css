@@ -205,6 +205,7 @@ main {
 }
 .sticky-footer .footer-item img {
   width: 100%;
+  max-width: 70px;
 }
 
 @media (max-width: 768px) {

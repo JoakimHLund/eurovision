@@ -28,6 +28,7 @@
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
       max-width: 600px;
+      width: 100%;
     }
 
     .thank-you-container h1 {
@@ -39,6 +40,7 @@
     .thank-you-container p {
       font-size: 1.1rem;
       color: #ccc;
+      margin-bottom: 16px;
     }
 
     .thank-you-container a {
@@ -56,13 +58,108 @@
     .thank-you-container a:hover {
       background-color: #005fa3;
     }
+
+    input[type="email"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #00c37a;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #00a364;
+    }
+
+    #response-msg {
+      margin-top: 10px;
+      color: #00c37a;
+    }
   </style>
 </head>
 <body>
   <div class="thank-you-container">
     <h1>🎉 Thank You!</h1>
     <p>Your Eurovision ranking has been successfully submitted.</p>
+    <p>
+      Some entries might get knocked out during the semi-finals on <strong>May 13th</strong> and <strong>May 15th</strong>.<br>
+      Leave your email below if you'd like a reminder with the option to change your selection on <strong>May 16th</strong>.
+    </p>
+
+    <form id="reminder-form">
+      <input type="email" id="user-email" placeholder="Your email address" required />
+      <div style="margin-top: 10px;">
+        <label>
+          <input type="checkbox" id="future-consent" />
+          I also would like a reminder by mail when the next competition happens
+        </label>
+      </div>
+      <button type="submit">Submit Email</button>
+    </form>
+
+    <div id="response-msg"></div>
+
     <a href="index.html">Go back to Home</a>
   </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyC9XUaWmUil7_IKOeS_7_s3XMP8zhLT_bM",
+    authDomain: "eurovision-1aab3.firebaseapp.com",
+    projectId: "eurovision-1aab3",
+    storageBucket: "eurovision-1aab3.firebasestorage.app",
+    messagingSenderId: "1027692031608",
+    appId: "1:1027692031608:web:04ac81204c85cccd39c78d"
+  };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("reminder-form");
+    const params = new URLSearchParams(window.location.search);
+    const docId = params.get("id");
+    const responseMsg = document.getElementById("response-msg");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("user-email").value.trim();
+      const wantsFutureReminder = document.getElementById("future-consent").checked;
+
+      if (!email || !docId) {
+        alert("Missing email or submission reference.");
+        return;
+      }
+
+      try {
+        const docRef = doc(db, "rankings", docId);
+        await updateDoc(docRef, {
+          reminder_email: email,
+          wants_future_reminder: wantsFutureReminder
+        });
+
+        responseMsg.textContent = "📬 Your reminder has been saved!";
+        form.reset();
+      } catch (err) {
+        console.error("Error updating doc:", err);
+        alert("Could not save your email. Please try again later.");
+      }
+    });
+  </script>
 </body>
 </html>

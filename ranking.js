@@ -146,13 +146,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       });
   
       try {
-        await firebaseAddDoc(firebaseCollection(firebaseDB, "rankings"), {
+        const docRef = await firebaseAddDoc(firebaseCollection(firebaseDB, "rankings"), {
           name,
           team,
           rankings,
           timestamp: new Date().toISOString()
         });
-        window.location.href = "thankyou.html";
+        window.location.href = `thankyou.html?id=${docRef.id}`;
+        
       } catch (err) {
         console.error("Error writing to Firebase:", err);
         alert("Error submitting data.");
