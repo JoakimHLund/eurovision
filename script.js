@@ -35,13 +35,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     alert("You can only select up to 10 entries!");
                     return false;
                 }
-
+            
                 const item = document.createElement("div");
                 item.classList.add("footer-item");
                 item.setAttribute("data-country", entry.country);
                 item.innerHTML = `<img src="${entry.heartimg}" alt="Heart Flag">`;
-                stickyFooter.appendChild(item);
-
+            
+                // ⬇️ keep the button as the last element in the footer
+                stickyFooter.insertBefore(item, continueButton);
+            
                 selectedCount++;
                 selectedCountries.add(entry.country);
                 updateIndicator();

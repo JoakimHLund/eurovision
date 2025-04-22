@@ -15,7 +15,7 @@
       "artist": "PARG",
       "song": "SURVIVOR",
       "artistimg": "img/artists/parg.jpg",
-      "spotify": "",
+      "spotify": "4FqL1MlFQ67DipYCbmHzj8",
       "youtube": "RfH5o3XtI2c?si=xirqykGpuHnoyswW",
       "description": "<p><b>Parg</b> is an artist known for blending traditional Armenian elements with modern soundscapes.</p><p>The artist's music is deeply rooted in Armenian culture, yet forward-thinking and innovative, positioning him as a trailblazer in modern Armenian pop music.</p>"
 
@@ -110,7 +110,8 @@
       "song": "Espresso Macchiato",
       "artistimg": "img/artists/tommycash.jpg",
       "spotify": "3gWBWLw3J3XTy3QTo36GqJ",
-      "youtube": "5MS_Fczs_98?si=QEsiuLdx8yb29Zhh"
+      "youtube": "5MS_Fczs_98?si=QEsiuLdx8yb29Zhh",
+      "description":"<p>Not only a musician, <b>Tommy Cash</b> is an accomplished visual artist, consuming and repackaging global trends through his own gaze and sense of humour. </p>"
     },
     {
       "country": "Finland",
@@ -119,25 +120,29 @@
       "song": "Ich Komme",
       "artistimg": "img/artists/erikavikman.jpg",
       "spotify": "52NFoPnzxOKPIcJIQ9mb5Q",
-      "youtube": "Kg3QoTpnqyw?si=LYSpNqPPGfNx3r_k"
+      "youtube": "Kg3QoTpnqyw?si=LYSpNqPPGfNx3r_k",
+      "description":"<p>One of the brightest stars in the Finnish pop world, <b>Erika Vikman</b>, started her career in the entertainment industry at a very young age.</p>"
+
     },
     {
       "country": "France",
       "heartimg": "svg/hearts/france.svg",
       "artist": "Louane",
-      "song": "TBA (15.03)",
+      "song": "maman",
       "artistimg": "img/artists/louane.jpg",
-      "spotify": "",
-      "youtube": ""
+      "spotify": "1iJ9cSEWYQsd2M7ROFyIZx",
+      "youtube": "Pj2DTSLcNnI?si=ZmIGhKoKdJUnkl5v",
+      "description":"<p><b>Louane</b>, a major icon of the French music scene, is considered more than just an artist: She has been called a bridge between the personal and the universal.</p>"
     },
     {
       "country": "Georgia",
       "heartimg": "svg/hearts/georgia.svg",
-      "artist": "TBA",
-      "song": "TBA",
-      "artistimg": "img/artists/tba.jpg",
-      "spotify": "",
-      "youtube": ""
+      "artist": "Mariam Shengelia",
+      "song": "Freedom",
+      "artistimg": "img/artists/mariamshengelia.jpg",
+      "spotify": "5mjD2U1w6217p73LC9MEht",
+      "youtube": "c3wu0dUNd4c?si=4xoaeewtNcXW2lGK",
+      "description":"<p><b>Mariam</b> first gained national recognition on The X Factor Georgia, where her distinctive voice and emotional depth set her apart. Determined to push her artistry even further, she later competed on The Voice Georgia, captivating audiences with her powerful performances and undeniable stage presence.</p>"
     },
     {
       "country": "Germany",
@@ -146,7 +151,8 @@
       "song": "Baller",
       "artistimg": "img/artists/abortynna.jpg",
       "spotify": "4kbkYbhWNiSJraySknB4hD",
-      "youtube": "6BfRACNvdBQ?si=uU4jMcy_YqU0Gjft"
+      "youtube": "6BfRACNvdBQ?si=uU4jMcy_YqU0Gjft",
+      "description":"<p>The brother and sister duo <b>Abor & Tynna</b> come from a family of musicians based in Vienna. They wrote their first songs together in 2016, and their musical career has taken them from family evenings in the classroom to gigs in Vienna, Berlin and Hanover.</p>"
     },
     {
       "country": "Greece",
@@ -155,7 +161,8 @@
       "song": "Asteromáta",
       "artistimg": "img/artists/klavdia.jpg",
       "spotify": "2aE2SRm4QraCuDBNnBsRIz",
-      "youtube": "UxzeTezgey4?si=Zm9mWD91YEPcLYRv"
+      "youtube": "UxzeTezgey4?si=Zm9mWD91YEPcLYRv",
+      "description":"<p><b>Klavdia</b> has gone from reaching the final of The Voice of Greece (where she was mentored by Eurovision winner Helena Paparizou) to releasing platinum-selling singles. She has also amassed a huge following on social media, due to her unique interpretations of pop classics.</p>"
     },
     {
       "country": "Iceland",
@@ -164,7 +171,8 @@
       "song": "RÓA",
       "artistimg": "img/artists/vaeb.jpg",
       "spotify": "1YnOwWvV1bQevRqJMCbYJz",
-      "youtube": "LZE1WzOwtQQ?si=H1WvkFBLY21rKJ0U"
+      "youtube": "LZE1WzOwtQQ?si=H1WvkFBLY21rKJ0U",
+      "description":"<p><b>VÆB</b> (pronounced 'vibe') are a duo made up of brothers Matthías Davíð Matthíasson and Hálfdán Helgi Matthíasson. In 2022, the brothers formed the duo VÆB after posting a comedy song on TikTok. It attracted so much attention on social media, they decided to release it on streaming platforms and have been putting out music ever since</p>"
     },
     {
       "country": "Ireland",
@@ -173,16 +181,18 @@
       "song": "Laika Party",
       "artistimg": "img/artists/emmy.jpg",
       "spotify": "5PZnJ8GErvuiCo7wKKtpKo",
-      "youtube": ""
+      "youtube": "cZnusVb7yjs?si=84m_sPlTQMapLFp1",
+      "description":"<p><b>EMMY</b> is a 24-year-old singer-songwriter from Norway. She was born and raised in a family that loves music and she has been singing her whole life.</p><p>She is especially known for singing on TikTok, and has a profile with 1.2 million followers from around the world. She has also been working with big-name producers such as K-391 and Braaheim.</p>"
     },
     {
       "country": "Israel",
       "heartimg": "svg/hearts/israel.svg",
       "artist": "Yuval Raphael",
-      "song": "New Day Will Rise (09.03)",
+      "song": "New Day Will Rise",
       "artistimg": "img/artists/yuvalraphael.jpg",
-      "spotify": "",
-      "youtube": ""
+      "spotify": "1H5GUNNCrurtyoOKbS2tT8",
+      "youtube": "Q3BELu4z6-U?si=otCOUpkZYTmXtUjv",
+      "description":"<p><b>Yuval Raphael</b> began her professional singing career in 2024 when she took part in TV talent show HaKokhav HaBa, captivating viewers with her vocals all the way through to the final of the competition, which she won</p>"
     },
     {
       "country": "Italy",
@@ -191,7 +201,8 @@
       "song": "Volevo Essere Un Duro",
       "artistimg": "img/artists/luciocorsi.jpg",
       "spotify": "5sFbAYktReH4AJbATsGAw8",
-      "youtube": "mfAf9-5Oevw?si=N06uhSae4Vx9mZRP"
+      "youtube": "mfAf9-5Oevw?si=N06uhSae4Vx9mZRP",
+      "description": "<p><b>Lucio Corsi</b>'s music draws inspiration from both the great Italian and the classic singer-songwriter traditions, with influences ranging from Paolo Conte and Lucio Dalla to Bob Dylan and Randy Newman.</p> <p>As well as being the title of his Eurovision Song Contest entry, <b>Volevo Essere Un Duro</b> is also the name of Lucio’s new LP. It follows a critically-lauded run of albums: La Gente Che Sogna, inspired by 1970s glam rock; the acclaimed Cosa Faremo Da Grandi?; the concept album Bestiario Musicale, which explores the animals of his homeland; and his early EPs Altalena Boy and Vetulonia Dakar.</p>"
     },
     {
       "country": "Latvia",
@@ -281,7 +292,7 @@
       "song": "Tutta l'Italia",
       "artistimg": "img/artists/gabryponte.jpg",
       "spotify": "0h3w9Sr1gToqxA9gIs5O39",
-      "youtube": ""
+      "youtube": "Le3WpaLYRvE?si=Aj6SavJFQ9_UyrlT"
     },
     {
       "country": "Serbia",
@@ -323,10 +334,10 @@
       "country": "Switzerland",
       "heartimg": "svg/hearts/switzerland.svg",
       "artist": "Zoë Më",
-      "song": "TBA (10.03)",
+      "song": "Voyage",
       "artistimg": "img/artists/zoeme.jpg",
-      "spotify": "",
-      "youtube": ""
+      "spotify": "4Y0lQy86Qz9ncQwgTTS2rc",
+      "youtube": "dGX54zRExR8?si=RyzD0CXu4Sf_tLxk"
     },
     {
       "country": "Ukraine",
@@ -335,7 +346,7 @@
       "song": "Bird of Pray",
       "artistimg": "img/artists/ziferblat.jpg",
       "spotify": "0YM3CotMLnoTBVwMCJzYeV",
-      "youtube": ""
+      "youtube": "OJ1x2aiL7ks?si=rmCwAVG50gwaeaIG"
     },
     {
       "country": "United Kingdom",
