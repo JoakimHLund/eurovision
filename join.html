@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Eurovision Game 2025</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #1f1f1f;
+      color: #f5f5f5;
+      overflow: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    h2 {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.6rem;
+      z-index: 2;
+    }
+
+    .qr-section {
+      margin: 40px 0;
+      z-index: 2;
+    }
+
+    .qr-section img.qr {
+      width: 320px;
+      height: auto;
+    }
+
+    .heart {
+      position: absolute;
+      width: 40px;
+      height: auto;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 3;
+      animation: float 12s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      50% {
+        transform: translate(-20px, -30px) rotate(20deg);
+      }
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/esclogo.png" alt="Eurovision 2025 Logo">
+  </header>
+
+  <h2>Scan the QR code to join Avinor’s Eurovision Game 2025!</h2>
+
+  <div class="qr-section">
+    <img src="img/qr.png" alt="QR Code" class="qr">
+  </div>
+
+  <script>
+    const hearts = [
+      "svg/hearts/albania.svg", "svg/hearts/armenia.svg", "svg/hearts/australia.svg",
+      "svg/hearts/austria.svg", "svg/hearts/azerbaijan.svg", "svg/hearts/belgium.svg",
+      "svg/hearts/croatia.svg", "svg/hearts/cyprus.svg", "svg/hearts/czechia.svg",
+      "svg/hearts/denmark.svg", "svg/hearts/estonia.svg", "svg/hearts/finland.svg",
+      "svg/hearts/france.svg", "svg/hearts/georgia.svg", "svg/hearts/germany.svg",
+      "svg/hearts/greece.svg", "svg/hearts/iceland.svg", "svg/hearts/ireland.svg",
+      "svg/hearts/israel.svg", "svg/hearts/italy.svg", "svg/hearts/latvia.svg",
+      "svg/hearts/lithuania.svg", "svg/hearts/luxembourg.svg", "svg/hearts/malta.svg",
+      "svg/hearts/norway.svg", "svg/hearts/poland.svg", "svg/hearts/portugal.svg",
+      "svg/hearts/spain.svg", "svg/hearts/sweden.svg", "svg/hearts/ukraine.svg"
+    ];
+
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const usedIndexes = new Set();
+
+    for (let i = 0; i < 30; i++) {
+      let index;
+      do {
+        index = getRandomInt(0, hearts.length - 1);
+      } while (usedIndexes.has(index));
+      usedIndexes.add(index);
+
+      const img = document.createElement("img");
+      img.src = hearts[index];
+      img.classList.add("heart");
+
+      // Place hearts anywhere on screen
+      img.style.top = `${getRandomInt(0, window.innerHeight - 50)}px`;
+      img.style.left = `${getRandomInt(0, window.innerWidth - 50)}px`;
+
+      // Add unique animation delay/duration
+      img.style.animationDuration = `${getRandomInt(10, 20)}s`;
+      img.style.animationDelay = `${getRandomInt(0, 5)}s`;
+
+      document.body.appendChild(img);
+    }
+  </script>
+</body>
+</html>
