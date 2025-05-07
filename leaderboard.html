@@ -71,13 +71,15 @@
         querySnapshot.forEach((doc) => {
           const data = doc.data();
           const name = data.name || "Unnamed";
+          const team = data.team || "NoTeam";
+
           const rankings = data.rankings || {};
 
           const row = document.createElement("tr");
 
           // Player name cell
           const nameCell = document.createElement("td");
-          nameCell.textContent = name;
+          nameCell.textContent = `(${team}) ${name}`;
           row.appendChild(nameCell);
 
           // Rankings 1–10
@@ -131,5 +133,18 @@
     </thead>
     <tbody id="leaderboard-body"></tbody>
   </table>
+  <div style="margin-top: 40px;">
+    <button onclick="history.back()" style="
+      padding: 10px 20px;
+      background-color: #444;
+      color: #f5f5f5;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    ">
+      ← Back
+    </button>
+  </div>
 </body>
 </html>
