@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stats</title>
+  <link rel="stylesheet" href="stats.css" />
+</head>
+<body>
+    <header>
+        <img src="img/esclogo.png" alt="Eurovision 2025 Logo">
+      </header>
+  <main class="stats-container">
+    <h1>Avinor Eurovision Game Stats</h1>
+    <table id="stats-table">
+      <thead>
+        <tr>
+          <th>Entry</th>
+          <th>Picked By</th>
+          <th>Average Rating</th>
+          <th>Avinor Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filled by stats.js -->
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC9XUaWmUil7_IKOeS_7_s3XMP8zhLT_bM",
+      authDomain: "eurovision-1aab3.firebaseapp.com",
+      projectId: "eurovision-1aab3",
+      storageBucket: "eurovision-1aab3.appspot.com",
+      messagingSenderId: "1027692031608",
+      appId: "1:1027692031608:web:04ac81204c85cccd39c78d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Pass Firestore to stats.js
+    window.firebaseDB = db;
+    window.firebaseCollection = collection;
+    window.firebaseGetDocs = getDocs;
+  </script>
+
+  <script type="module" src="stats.js"></script>
+</body>
+</html>

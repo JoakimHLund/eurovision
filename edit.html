@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Eurovision Rankings</title>
+
+  <!-- SortableJS for drag-and-drop -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="edit.css" />
+</head>
+<body>
+  <main class="ranking-container">
+    <section id="ranking-slots" class="right-panel">
+      <h2>Edit Rankings</h2>
+      <div id="slots-container"></div>
+    </section>
+  </main>
+
+  <!-- Save Button -->
+  <button id="save-btn" style="display:none;">Save Changes</button>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC9XUaWmUil7_IKOeS_7_s3XMP8zhLT_bM",
+      authDomain: "eurovision-1aab3.firebaseapp.com",
+      projectId: "eurovision-1aab3",
+      storageBucket: "eurovision-1aab3.appspot.com",
+      messagingSenderId: "1027692031608",
+      appId: "1:1027692031608:web:04ac81204c85cccd39c78d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Make Firestore available globally for edit.js
+    window.firebaseDB = db;
+    window.firebaseGetDoc = getDoc;
+    window.firebaseDoc = doc;
+    window.firebaseUpdateDoc = updateDoc;
+  </script>
+
+  <!-- Main Script -->
+  <script type="module" src="edit.js"></script>
+</body>
+</html>

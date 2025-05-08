@@ -1,0 +1,90 @@
+/* General Page Styling */
+body {
+    background: #1f1f1f;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  /* Eurovision Logo */
+  header img {
+    max-width: 400px;
+    height: auto;
+  }
+  
+  /* Stats Table */
+  table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: center;
+  }
+  
+  th {
+    background: #2a2a2a;
+    font-size: 1.1rem;
+    color: #ffd700;
+  }
+  
+  td img {
+    max-width: 40px;
+    height: auto;
+    vertical-align: middle;
+  }
+  
+  .entry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Heading */
+  h1 {
+    color: #ffd700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Back Button */
+  .back-button {
+    margin-top: 40px;
+  }
+  
+  .back-button button {
+    padding: 10px 20px;
+    background-color: #444;
+    color: #f5f5f5;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .back-button button:hover {
+    background-color: #666;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .entry {
+      flex-direction: column;
+    }
+  
+    td, th {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+  

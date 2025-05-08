@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+  }
+  
+  .ranking-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 40px;
+    justify-content: center;
+  }
+  
+  .right-panel {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
+    max-height: calc(100vh - 40px);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h2 {
+    margin-bottom: 16px;
+  }
+  
+  #slots-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .entry-card {
+    background: #3a3a3a;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: grab;
+    width: 100%;
+  }
+  
+  .entry-card img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .entry-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .entry-info .country {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  
+  .entry-info .song {
+    font-size: 0.9em;
+    color: #ccc;
+  }
+  
+  .rank-slot {
+    background-color: #444;
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px dashed #666;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 80px;
+  }
+  
+  .rank-label {
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 1em;
+    margin-bottom: 4px;
+  }
+  
+  .slot-dropzone {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Save Button */
+  #save-btn {
+    margin: 24px auto;
+    display: block;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f5f5f5;
+    background-color: #0077cc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+  }
+  
+  #save-btn:hover {
+    background-color: #005fa3;
+  }
+  
+  #save-btn:disabled {
+    background-color: #555;
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .ranking-container {
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px;
+    }
+  
+    .right-panel {
+      max-height: none;
+      height: auto;
+    }
+  
+    .entry-card {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  
+    .entry-info .country {
+      font-size: 1em;
+    }
+  
+    .entry-info .song {
+      font-size: 0.85em;
+    }
+  }
+  
