@@ -64,48 +64,52 @@
     const db = getFirestore(app);
 
     document.addEventListener("DOMContentLoaded", async () => {
-      const tableBody = document.getElementById("leaderboard-body");
+  const tableBody = document.getElementById("leaderboard-body");
+  const playerCountElement = document.getElementById("player-count");
 
-      try {
-        const querySnapshot = await getDocs(collection(db, "rankings"));
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          const name = data.name || "Unnamed";
-          const team = data.team || "NoTeam";
+  try {
+    const querySnapshot = await getDocs(collection(db, "rankings"));
+    let playerCount = 0;
 
-          const rankings = data.rankings || {};
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const name = data.name || "Unnamed";
+      const team = data.team || "NoTeam";
+      const rankings = data.rankings || {};
 
-          const row = document.createElement("tr");
+      const row = document.createElement("tr");
 
-          // Player name cell
-          const nameCell = document.createElement("td");
-          nameCell.textContent = `(${team}) ${name}`;
-          row.appendChild(nameCell);
+      const nameCell = document.createElement("td");
+      nameCell.textContent = `(${team}) ${name}`;
+      row.appendChild(nameCell);
 
-          // Rankings 1–10
-          for (let i = 1; i <= 10; i++) {
-            const rankKey = `rank_${i}`;
-            const country = rankings[rankKey];
-            const cell = document.createElement("td");
+      for (let i = 1; i <= 10; i++) {
+        const rankKey = `rank_${i}`;
+        const country = rankings[rankKey];
+        const cell = document.createElement("td");
 
-            if (country) {
-              const img = document.createElement("img");
-              img.src = `svg/hearts/${country.toLowerCase().replace(/\s+/g, "")}.svg`;
-              img.alt = country;
-              cell.appendChild(img);
-            } else {
-              cell.textContent = "-";
-            }
+        if (country) {
+          const img = document.createElement("img");
+          img.src = `svg/hearts/${country.toLowerCase().replace(/\s+/g, "")}.svg`;
+          img.alt = country;
+          cell.appendChild(img);
+        } else {
+          cell.textContent = "-";
+        }
 
-            row.appendChild(cell);
-          }
-
-          tableBody.appendChild(row);
-        });
-      } catch (error) {
-        console.error("Error loading leaderboard:", error);
+        row.appendChild(cell);
       }
+
+      tableBody.appendChild(row);
+      playerCount++;
     });
+
+    playerCountElement.textContent = `Number of players: ${playerCount}`;
+  } catch (error) {
+    console.error("Error loading leaderboard:", error);
+  }
+});
+
   </script>
 </head>
 <body>
@@ -163,5 +167,7 @@
     </div>
     
   </div>
+  <div id="player-count" style="margin-top: 20px; font-size: 1.2rem;"></div>
+
 </body>
 </html>
