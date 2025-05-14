@@ -73,25 +73,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 const entryWrapper = document.createElement("div");
                 entryWrapper.classList.add("entry-wrapper");
 
-                // Star box
                 const starBox = document.createElement("div");
                 starBox.classList.add("star-box");
-                starBox.innerHTML = `<img src="svg/Empty_Star.svg" alt="Star" class="star-icon">`;
 
-                starBox.addEventListener("click", function () {
-                    const starIcon = starBox.querySelector(".star-icon");
-                    if (starIcon.classList.contains("selected")) {
-                        starIcon.classList.remove("selected");
-                        starIcon.src = "svg/Empty_Star.svg";
-                        removeFromFooter(entry.country);
-                    } else {
-                        const added = addToFooter(entry);
-                        if (added) {
-                            starIcon.classList.add("selected");
-                            starIcon.src = "svg/Star_full.svg";
+                if (entry.eliminated === "true") {
+                    // Display message for eliminated entries
+                    const eliminatedText = document.createElement("div");
+                    eliminatedText.classList.add("eliminated-text");
+                    eliminatedText.textContent = "Not qualified for the final";
+                    starBox.appendChild(eliminatedText);
+                } else {
+                    // Keep regular star selector for valid entries
+                    starBox.innerHTML = `<img src="svg/Empty_Star.svg" alt="Star" class="star-icon">`;
+
+                    starBox.addEventListener("click", function () {
+                        const starIcon = starBox.querySelector(".star-icon");
+                        if (starIcon.classList.contains("selected")) {
+                            starIcon.classList.remove("selected");
+                            starIcon.src = "svg/Empty_Star.svg";
+                            removeFromFooter(entry.country);
+                        } else {
+                            const added = addToFooter(entry);
+                            if (added) {
+                                starIcon.classList.add("selected");
+                                starIcon.src = "svg/Star_full.svg";
+                            }
                         }
-                    }
-                });
+                    });
+                }
+
 
                 // Entry card
                 const card = document.createElement("div");

@@ -295,3 +295,9 @@ main {
   flex: 1;
 }
 
+.eliminated-text {
+  font-size: 0.9rem;
+  color: #999;
+  text-align: center;
+  padding: 8px;
+}

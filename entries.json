@@ -28,7 +28,7 @@
       "artistimg": "img/artists/gojo.jpg",
       "spotify": "0TWdO0ephIotzHvGuv2pGC",
       "youtube": "_08I6mjHSLA?si=98euPuRSLV5PesxY",
-      "description": "<p><b>Go-Jo</b> is the magnetic musician, who can play guitar and unicycle at the same time, is now based in Sydney after being raised off-grid in rural Western Australia.</p>"
+      "description": "<p><b>Go-Jo</b> is the magnetic musician, who can play guitar and unicycle at the same time, is now based in Sydney after being raised off-grid in rural Western Australia.</p><p><b>Milkshake man</b> is according to the artist \"a deep and complex song about confidence and finding the loudest and proudest version of yourself... and also about c*m\"</p>"
 
     },
     {
@@ -51,6 +51,7 @@
       "artistimg": "img/artists/mamagama.jpg",
       "spotify": "4NdNOrfHfNIprOJ3Uq1l43",
       "youtube": "upbiPJ9uA70?si=KFkMsA6t8Vcx7ea9",
+      "eliminated":"true",
       "description": "<p>Formed in 2021, the trio <b>Mamagama</b> has by now cemented itself as one of the most innovative bands in Azerbaijan’s music scene.</p>"
     },
     {
@@ -61,6 +62,7 @@
       "artistimg": "img/artists/redsebastian.jpg",
       "spotify": "0Tx2AeVKiYQjk8u9p4j6kV",
       "youtube": "oVrsnGFmuss?si=SJh9CtTQjrzKCJWk",
+      "eliminated":"true",
       "description": "<p>At the Conservatory, Seppe developed his alter ego: <b>Red Sebastian</b>. The rouge-tinted pop star was a finalist in the 2024 TV talent show Sing Again, during which he stood out for both his fantastic vocal range and a remarkable array of outfits.</p> <p>Red Sebastian is also an accomplished piano player, having been inspired by Lady Gaga at an early age.</p>"
     },
     {
@@ -71,6 +73,7 @@
       "artistimg": "img/artists/markobosnjak.jpg",
       "spotify": "0jtkkJ6Q0IB5iw5obHJDVl",
       "youtube": "xOodVfY8hCs?si=0oDajTaT6wG7XVpX",
+      "eliminated":"true",
       "description": "<p>The singer <b>Marko Bošnjak</b> is regarded as one of the leaders of a new generation of musicians who are making their mark and setting trends on the Croatian music scene.</p>"
     },
     {
@@ -81,6 +84,7 @@
       "artistimg": "img/artists/theoevan.jpg",
       "spotify": "3mwqwFYIrO8hE3YBN8gk14",
       "youtube": "rbfQqWyqgJw?si=OdEB2Cg32jsAq1_e",
+      "eliminated":"true",
       "description": "<p>A singer and dancer since the age of 7, and a songwriter since his teens, <b>Theo Evan</b>’s Eurovision Song Contest journey is the latest chapter in this artist’s story.</p> <p>Eagle-eyed viewers might have spotted Theo in HBO’s hit TV series Euphoria, where he’s appeared as an extra!</p>"
     },
     {
@@ -310,7 +314,8 @@
       "song": "How Much Time Do We Have Left",
       "artistimg": "img/artists/klemen.jpg",
       "spotify": "104QgPphJUPg86IWYnAnL7",
-      "youtube": "qTS2L0VcaVI?si=630A3ogHglvoHOkM"
+      "youtube": "qTS2L0VcaVI?si=630A3ogHglvoHOkM",
+      "eliminated":"true"
     },
     {
       "country": "Spain",

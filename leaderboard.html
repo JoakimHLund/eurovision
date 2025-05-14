@@ -40,10 +40,12 @@
       max-width: 40px;
       height: auto;
     }
-
-    td {
-      text-align: center;
+    .eliminated-flag {
+      opacity: 0.3;
+      filter: grayscale(70%);
     }
+
+
   </style>
 
   <!-- Firebase SDK -->
@@ -71,6 +73,18 @@
     const querySnapshot = await getDocs(collection(db, "rankings"));
     let playerCount = 0;
 
+
+    const entriesResponse = await fetch("entries.json");
+    const entriesData = await entriesResponse.json();
+
+    // Create a Set of eliminated countries for quick lookup
+    const eliminatedCountries = new Set(
+      entriesData
+        .filter(entry => entry.eliminated === "true")
+        .map(entry => entry.country.toLowerCase().replace(/\s+/g, ""))
+    );
+
+
     querySnapshot.forEach((doc) => {
       const data = doc.data();
       const name = data.name || "Unnamed";
@@ -90,7 +104,16 @@
 
         if (country) {
           const img = document.createElement("img");
-          img.src = `svg/hearts/${country.toLowerCase().replace(/\s+/g, "")}.svg`;
+          const normalized = country.toLowerCase().replace(/\s+/g, "");
+          img.src = `svg/hearts/${normalized}.svg`;
+
+          if (eliminatedCountries.has(normalized)) {
+            img.classList.add("eliminated-flag");
+            img.title = "Not qualified for the final";
+          }
+
+
+
           img.alt = country;
           cell.appendChild(img);
         } else {
