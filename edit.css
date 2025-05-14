@@ -40,7 +40,9 @@
     gap: 12px;
     width: 100%;
     max-width: 500px;
+    padding-bottom: 80px; /* ⬅️ added to prevent content being hidden behind sticky footer */
   }
+  
   
   .entry-card {
     background: #3a3a3a;
@@ -101,7 +103,7 @@
   
   /* Save Button */
   #save-btn {
-    margin: 24px auto;
+    margin:  auto;
     display: block;
     padding: 12px 24px;
     font-size: 1.1rem;
@@ -150,5 +152,104 @@
     .entry-info .song {
       font-size: 0.85em;
     }
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    color: #f5f5f5;
+  }
+  
+  .options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0;
+    justify-content: center;
+  }
+  
+  .option-card {
+    background: #3a3a3a;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .option-card:hover {
+    background: #555;
+  }
+  
+  .option-card img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  #cancel-replace {
+    background: #777;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #cancel-replace:hover {
+    background: #999;
+  }
+  
+  #save-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #1f1f1f;
+    padding: 12px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    z-index: 100;
+    max-height: 80px;
+  }
+  
+  .replace-btn {
+    margin-left: auto;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  
+  .replace-btn:hover {
+    background-color: #777;
+  }
+  
+  .instruction-text {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 16px;
+    text-align: center;
+    line-height: 1.4;
   }
   

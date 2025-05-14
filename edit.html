@@ -14,13 +14,15 @@
 <body>
   <main class="ranking-container">
     <section id="ranking-slots" class="right-panel">
-      <h2>Edit Rankings</h2>
-      <div id="slots-container"></div>
-    </section>
+        <h2>Edit Rankings</h2>
+        <p class="instruction-text">
+          Drag and drop entries to change their order. Click <strong>Replace</strong> to change to a different entry.
+        </p>
+        <div id="slots-container"></div>
+      </section>
+      
   </main>
 
-  <!-- Save Button -->
-  <button id="save-btn" style="display:none;">Save Changes</button>
 
   <!-- Firebase SDK -->
   <script type="module">
@@ -48,5 +50,18 @@
 
   <!-- Main Script -->
   <script type="module" src="edit.js"></script>
+  <!-- Replace Modal -->
+    <div id="replace-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+        <h3>Select a Replacement</h3>
+        <div id="replacement-options" class="options-grid"></div>
+        <button id="cancel-replace">Cancel</button>
+        </div>
+    </div>
+    <!-- Sticky Save Button -->
+<div id="save-container">
+    <button id="save-btn">Save Changes</button>
+  </div>
+  
 </body>
 </html>

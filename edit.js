@@ -48,29 +48,40 @@ document.addEventListener("DOMContentLoaded", async () => {
       countryToEntry[entry.country] = entry;
     });
 
-    // Generate rank slots with existing cards
-    rankLabels.forEach(({ label, emoji, multiplier }, index) => {
-      const slotWrapper = document.createElement("div");
-      slotWrapper.classList.add("rank-slot");
+    const selectedCountries = new Set();
 
-      const labelEl = document.createElement("div");
-      labelEl.classList.add("rank-label");
-      labelEl.textContent = `${emoji} ${label} (${multiplier}x multiplier)`;
+rankLabels.forEach(({ label, emoji, multiplier }, index) => {
+  const slotWrapper = document.createElement("div");
+  slotWrapper.classList.add("rank-slot");
 
-      const dropZone = document.createElement("div");
-      dropZone.classList.add("slot-dropzone");
+  const labelEl = document.createElement("div");
+  labelEl.classList.add("rank-label");
+  labelEl.textContent = `${emoji} ${label} (${multiplier}x multiplier)`;
 
-      const country = currentRankings[`rank_${index + 1}`];
-      const entry = countryToEntry[country];
-      if (entry) {
-        const card = createCard(entry);
-        dropZone.appendChild(card);
-      }
+  const dropZone = document.createElement("div");
+  dropZone.classList.add("slot-dropzone");
 
-      slotWrapper.appendChild(labelEl);
-      slotWrapper.appendChild(dropZone);
-      slotsContainer.appendChild(slotWrapper);
+  const country = currentRankings[`rank_${index + 1}`];
+  const entry = countryToEntry[country];
+
+  if (entry) {
+    selectedCountries.add(entry.country);
+
+    const card = createCard(entry, allEntries, selectedCountries, (newEntry) => {
+      selectedCountries.delete(entry.country);
+      selectedCountries.add(newEntry.country);
+      const newCard = createCard(newEntry, allEntries, selectedCountries, () => {});
+      dropZone.innerHTML = "";
+      dropZone.appendChild(newCard);
     });
+
+    dropZone.appendChild(card);
+  }
+
+  slotWrapper.appendChild(labelEl);
+  slotWrapper.appendChild(dropZone);
+  slotsContainer.appendChild(slotWrapper);
+});
 
     // Enable drag-and-drop on slots
     document.querySelectorAll(".slot-dropzone").forEach(zone => {
@@ -119,23 +130,76 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-function createCard(entry) {
-  const card = document.createElement("div");
-  card.classList.add("entry-card");
-  card.id = `entry-${entry.country.replace(/\s+/g, "-")}`;
-
-  const flag = document.createElement("img");
-  flag.src = entry.heartimg;
-  flag.alt = `${entry.country} Flag`;
-
-  const info = document.createElement("div");
-  info.classList.add("entry-info");
-  info.innerHTML = `
-    <div class="country">${entry.country}</div>
-    <div class="song">${entry.song}</div>
-  `;
-
-  card.appendChild(flag);
-  card.appendChild(info);
-  return card;
-}
+function createCard(entry, allEntries, selectedCountries, onReplace) {
+    const card = document.createElement("div");
+    card.classList.add("entry-card");
+    card.id = `entry-${entry.country.replace(/\s+/g, "-")}`;
+  
+    const flag = document.createElement("img");
+    flag.src = entry.heartimg;
+    flag.alt = `${entry.country} Flag`;
+  
+    const info = document.createElement("div");
+    info.classList.add("entry-info");
+    info.innerHTML = `
+      <div class="country">${entry.country}</div>
+      <div class="song">${entry.song}</div>
+    `;
+  
+    const replaceBtn = document.createElement("button");
+    replaceBtn.textContent = "Replace";
+    replaceBtn.classList.add("replace-btn");
+  
+    replaceBtn.addEventListener("click", () => {
+      showReplaceModal(entry, allEntries, selectedCountries, onReplace);
+    });
+  
+    card.appendChild(flag);
+    card.appendChild(info);
+    card.appendChild(replaceBtn);
+    return card;
+  }
+  
+  function showReplaceModal(currentEntry, allEntries, selectedCountries, onReplace) {
+    const modal = document.getElementById("replace-modal");
+    const optionsGrid = document.getElementById("replacement-options");
+    const cancelBtn = document.getElementById("cancel-replace");
+  
+    // Clear previous options
+    optionsGrid.innerHTML = "";
+  
+    const validEntries = allEntries.filter(e =>
+      !e.eliminated &&
+      e.country !== currentEntry.country &&
+      !selectedCountries.has(e.country)
+    );
+  
+    validEntries.forEach(entry => {
+      const option = document.createElement("div");
+      option.classList.add("option-card");
+  
+      const img = document.createElement("img");
+      img.src = entry.heartimg;
+      img.alt = `${entry.country} Heart`;
+  
+      const name = document.createElement("span");
+      name.textContent = entry.country;
+  
+      option.appendChild(img);
+      option.appendChild(name);
+  
+      option.addEventListener("click", () => {
+        modal.style.display = "none";
+        onReplace(entry);
+      });
+  
+      optionsGrid.appendChild(option);
+    });
+  
+    cancelBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+  
+    modal.style.display = "flex";
+  }
+  
