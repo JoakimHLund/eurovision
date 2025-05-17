@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scoreboard</title>
+  <link rel="stylesheet" href="scores.css" />
+</head>
+<body>
+  <div class="left-pane">
+    <h2>Entries</h2>
+    <div id="ranked-list"></div>
+    <h3 class="divider">No score yet</h3>
+    <div id="unranked-list"></div>
+  </div>
+
+  <div class="right-pane">
+    <h2>Live Player Scoreboard</h2>
+    <div id="player-columns" class="player-columns"></div>
+  </div>
+
+  <!-- Players must be loaded first -->
+  <script type="module" src="playerscore.js"></script>
+  <script type="module" src="entryscore.js"></script>
+</body>
+</html>
