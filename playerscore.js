@@ -49,7 +49,14 @@ export async function loadPlayers() {
       id: doc.id,
       name: data.name || "Unknown",
       team: data.team || "NoTeam",
-      rankings: Object.values(data.rankings || {}),
+      rankings: Object.entries(data.rankings || {})
+  .sort(([a], [b]) => {
+    const getNum = str => parseInt(str.replace("rank_", ""));
+    return getNum(a) - getNum(b);
+  })
+  .map(([, country]) => country.trim()),
+
+
       liveScore: 0
     });
   });
@@ -65,13 +72,14 @@ export function updatePlayerScores(rankedEntries) {
       const oldScore = previousScores.get(player.id) || 0;
       let total = 0;
   
-      rankedEntries.forEach(entry => {
-        const idx = player.rankings.indexOf(entry.country);
-        if (idx !== -1 && typeof entry.score === "number") {
-          const multiplier = getMultiplierForRank(idx + 1);
+      player.rankings.forEach((country, idx) => {
+        const multiplier = getMultiplierForRank(idx + 1);
+        const entry = rankedEntries.find(e => e.country.trim().toLowerCase() === country.trim().toLowerCase());
+        if (entry && typeof entry.score === "number") {
           total += entry.score * multiplier;
         }
       });
+      
   
         player._newScore = total;
         player._scoreDiff = total - oldScore;

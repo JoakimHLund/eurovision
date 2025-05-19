@@ -9,11 +9,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const entriesRes = await fetch("entries.json");
   const entries = await entriesRes.json();
 
-  const sortedEntries = [...entries].sort((a, b) => {
+  const sortedEntries = entries
+  .filter(e => String(e.eliminated).toLowerCase() !== "true")
+  .sort((a, b) => {
     const scoreA = typeof a.score === "number" ? a.score : Infinity;
     const scoreB = typeof b.score === "number" ? b.score : Infinity;
     return scoreA - scoreB;
   });
+
 
   await loadPlayers();
 
